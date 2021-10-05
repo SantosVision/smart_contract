@@ -114,10 +114,10 @@ contract FundMe {
     // onlyOwner can withdraw
     function withdraw() public payable onlyOwner {
         // "transfer" is a function that we can call on any address to send eth from 1 address to another
-        // msg.sender == owner | "this" == keyword in solidity, it refes to the contract that you're currently in | "balace" == entire amount on that address\contract
+        // msg.sender == owner | "this" == keyword in solidity, it refes to the contract that you're currently in | "balance" == entire amount on that address\contract
         msg.sender.transfer(address(this).balance);
         // this lines resets everything to 0 when we withdraw all the balance
-        // this reset every one in that mapping to 0 | source: https://www.youtube.com/watch?v=M576WGiDBdQ&t=12008s  timestamp: 3:19:00
+        // this reset every one in that mapping to 0 | yt 3:19:00
         // we set the funderIndex to start from 0, and then the loop will finish when the funderIndex is greater or equal to the amount of funders.
         // "funderIndex++" will add an index after every sinle loop
         for (
